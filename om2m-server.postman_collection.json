@@ -1,0 +1,337 @@
+{
+	"info": {
+		"_postman_id": "959d7ae5-81f6-4d0c-b9d9-f6382df95038",
+		"name": "om2m-server",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "flex container",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "X-M2M-Origin",
+						"value": "admin:admin",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/xml;ty=28",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "<m2m:fcnt xmlns:m2m=\"http://www.onem2m.org/xml/protocols\" >\r\n    <rn>myFlexContainer</rn>\r\n    <cnd>org.eclipse.om2m.mydef</cnd>\r\n    <Temperature type=\"xs:float\">123.1 </Temperature>\r\n    \r\n</m2m:fcnt>",
+					"options": {
+						"raw": {
+							"language": "xml"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8080/~/in-cse/in-name",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8080",
+					"path": [
+						"~",
+						"in-cse",
+						"in-name"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "flex get",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "X-M2M-Origin",
+						"value": "admin:admin",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://127.0.0.1:8080/~/in-cse/in-name/fcnt_602599106",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8080",
+					"path": [
+						"~",
+						"in-cse",
+						"in-name",
+						"fcnt_602599106"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Subscription",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json;ty=23",
+						"type": "text"
+					},
+					{
+						"key": "X-M2M-Origin",
+						"value": "guest:guest",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\"m2m:sub\": {\r\n\"rn\": \"Dashboard\",\r\n\"nu\": [\"http://192.168.225.64:5000/create/OC-KH95-03\"],\r\n\"nct\": 2,\r\n\"enc\": {\r\n\"net\": 3\r\n}\r\n}\r\n}"
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8080/~/in-cse/in-name/AE-Misc/OC-KH95-03/Data",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8080",
+					"path": [
+						"~",
+						"in-cse",
+						"in-name",
+						"AE-Misc",
+						"OC-KH95-03",
+						"Data"
+					],
+					"query": [
+						{
+							"key": "X-M2M-Origin",
+							"value": null,
+							"disabled": true
+						},
+						{
+							"key": "",
+							"value": "a",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "AE-Alexa/Monitor",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "X-M2M-Origin",
+						"value": "admin:admin",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json;ty=4",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"m2m:cin\": {\r\n        \"lbl\": \"Registered Device\",\r\n        \"con\": \"{\\\"Device_ID\\\": \\\"DemoAlexa2\\\", \\\"URI\\\": \\\"/in-cse/in-name/AE-Misc/OC-KH95-05/Master_cont\\\" }\"\r\n    }\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8080/~/in-cse/in-name/AE-Alexa/Monitor",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8080",
+					"path": [
+						"~",
+						"in-cse",
+						"in-name",
+						"AE-Alexa",
+						"Monitor"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://127.0.0.1:8080/~/in-cse/in-name/AE-Alexa?fu=1",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "X-M2M-Origin",
+						"value": "admin:admin",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://127.0.0.1:8080/~/in-cse/in-name/AE-Alexa?fu=1",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8080",
+					"path": [
+						"~",
+						"in-cse",
+						"in-name",
+						"AE-Alexa"
+					],
+					"query": [
+						{
+							"key": "fu",
+							"value": "1"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Alexa IPE Mock Post url",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "X-M2M-Origin",
+						"value": "admin:admin",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"Device_ID\": \"DemoAlexa1\",\r\n    \"Request\": \"ON\",\r\n    \"label\": \"Alexa\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://1cc2-2409-4070-4603-b090-49e3-786c-9769-fd4e.ngrok.io/Alexa/home",
+					"protocol": "http",
+					"host": [
+						"1cc2-2409-4070-4603-b090-49e3-786c-9769-fd4e",
+						"ngrok",
+						"io"
+					],
+					"path": [
+						"Alexa",
+						"home"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Dashboard Subscription",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "http://192.168.225.64:8000/create/OC-KH95-00",
+					"protocol": "http",
+					"host": [
+						"192",
+						"168",
+						"225",
+						"64"
+					],
+					"port": "8000",
+					"path": [
+						"create",
+						"OC-KH95-00"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "create cin",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "X-M2M-Origin",
+						"value": "admin:admin",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json;ty=4",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"m2m:cin\":{\n        \"lbl\":[\n            \"Label-1\",\n            \"Label-2\"\n        ],\n        \"con\":\"[1636833984 , 1 , 0 , switchoff]\"\n\n    }\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8080/~/in-cse/in-name/AE-Misc/OC-KH95-00/Data",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8080",
+					"path": [
+						"~",
+						"in-cse",
+						"in-name",
+						"AE-Misc",
+						"OC-KH95-00",
+						"Data"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
