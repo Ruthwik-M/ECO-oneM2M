@@ -3,6 +3,14 @@ IIIT H Team 2 Project for KETI oneM2M hackathon
 
 The project is built on various platforms like Arduino, Django, Onem2m and Alexa 
 
+Necessary Installs:
+1) JAVA SDK 1.8
+2) Pyhton 3.x
+3) Ngrock
+4) Pycharm
+5) Postman
+6) Arduino
+
 Instructions for usage:
 1) The arduino IDE is used to compile the arduino sketches 
 2) The Django projects are built using Pycharm Community edition
@@ -33,4 +41,4 @@ b) The Actuation_PIR script helps in subscribing to the Alexa container and the 
 	b. Actuation device has to subscribe to Data container of the device 
 	c. Dashboard has to subscribe to Data Data container of the device 
 	
-6) The json files are postman collections necessary to create the necessary containers
+6) The json files are postman collections necessary to create the necessary containers and subscriptions
